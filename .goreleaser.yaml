@@ -1,0 +1,17 @@
+version: 2
+builds:
+  - binary: grok_exporter
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+      - linux
+    goarch:
+      - amd64
+      - arm64
+
+archives:
+  - id: default
+    format: binary
+  - id: targz
+    format: tar.gz
