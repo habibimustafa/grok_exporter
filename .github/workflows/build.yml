@@ -13,6 +13,9 @@ jobs:
     - name: Check out the repository
       uses: actions/checkout@v3
 
+    - name: Install Oniguruma library
+      run: sudo apt-get install -y libonig-dev
+
     - name: Set up Go
       uses: actions/setup-go@v4
       with:
