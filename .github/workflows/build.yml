@@ -15,8 +15,15 @@ jobs:
       with:
         submodules: true
 
-    - name: Install Oniguruma library
-      run: sudo apt-get install -y libonig-dev
+    - name: Install Basic Tools and Oniguruma library
+      run: |
+        sudo apt-get install -y autoconf \
+          build-essential \
+          curl \
+          git \
+          wget \
+          vim \
+          libonig-dev
 
     - name: Set up Go
       uses: actions/setup-go@v4
