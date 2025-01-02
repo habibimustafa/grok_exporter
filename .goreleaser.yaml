@@ -2,7 +2,8 @@ version: 2
 builds:
   - binary: grok_exporter
     env:
-      - CGO_ENABLED=0
+      - CGO_ENABLED=1
+      - CGO_LDFLAGS=/usr/local/lib/libonig.a
     goos:
       - linux
     goarch:
