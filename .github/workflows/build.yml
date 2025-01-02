@@ -16,25 +16,4 @@ jobs:
         submodules: true
 
     - name: Install Basic Tools and Oniguruma library
-      run: |
-        sudo apt-get install -y autoconf \
-          build-essential \
-          curl \
-          git \
-          wget \
-          vim \
-          libonig-dev
-
-    - name: Set up Go
-      uses: actions/setup-go@v4
-      with:
-        go-version: stable
-
-    - name: Set up GoReleaser
-      uses: goreleaser/goreleaser-action@v4
-      with:
-        distribution: goreleaser
-        version: latest
-        args: release --clean
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: ./hack/release.sh all
